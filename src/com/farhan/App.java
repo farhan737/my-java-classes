@@ -1,12 +1,13 @@
 package com.farhan;
 
-import com.farhan.others.Calc;
+import com.farhan.others.CharacterCount;
 
 public class App {
 
     public static void main(String[] args) {
-        int i = 153;
-        Calc c = new Calc();
-        System.out.println(c.reverseNum(i));
+        CharacterCount c = new CharacterCount();
+        c.charCount("hello");
+        c.charCountmapLess("null");
+
     }
 }
