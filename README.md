@@ -1,1 +1,1 @@
-this is java code example that i practiced during my java coaching at vcube
+this is java code examples that i practiced during my java coaching at vcube
