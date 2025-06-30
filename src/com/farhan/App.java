@@ -1,13 +1,14 @@
 package com.farhan;
 
-import com.farhan.others.CharacterCount;
-
 public class App {
+    int productid;
+
+    App(int productid) {
+        this.productid = productid;
+    }
 
     public static void main(String[] args) {
-        CharacterCount c = new CharacterCount();
-        c.charCount("hello");
-        c.charCountmapLess("null");
-
+        App a = new App(19);
+        System.out.println(a);
     }
 }
