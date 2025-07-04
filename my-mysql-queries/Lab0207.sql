@@ -1,3 +1,4 @@
+create database maindata;
 use maindata;
 create table publisher(
 	pid int not null,
