@@ -24,5 +24,9 @@ insert into book values
 delete from publisher where pubid = 1; 
 
 update publisher set pubid = 3 where pubid = 2;
+<<<<<<< HEAD
 //nice
+=======
+
+>>>>>>> e4a4a86 (CS0507(SQL))
 select * from book;
