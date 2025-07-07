@@ -13,7 +13,7 @@ create table book (
 	price int not null,
 	pid int not null,
 	primary key (bookid),
-	foreign key (pid) references publisher(pid) on update cascade
+	foreign key (pid) references publisher(pid) on update cascade on delete cascade
 );
 
 insert into publisher values
