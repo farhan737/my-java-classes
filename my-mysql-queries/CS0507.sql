@@ -25,8 +25,12 @@ delete from publisher where pubid = 1;
 
 update publisher set pubid = 3 where pubid = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 //nice
 =======
 
 >>>>>>> e4a4a86 (CS0507(SQL))
+=======
+//nice
+>>>>>>> 5d1ed91 (07072025)
 select * from book;

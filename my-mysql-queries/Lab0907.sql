@@ -14,4 +14,5 @@ VALUES ('farhan', 18),
 
 SELECT * FROM customer1;
 
+--hello
 DROP TABLE customer1;
