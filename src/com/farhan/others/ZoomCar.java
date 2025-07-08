@@ -15,6 +15,7 @@ public class ZoomCar {
     public void printInvoice() {
         System.out.println("the company name is: " + company);
         System.out.println("the total days for rental: " + days);
+        System.out.println("the insurrance price: 500");
         System.out.println("the final price for rental: " + takeOrder(days, company));
     }
 
