@@ -21,8 +21,9 @@ USE maindata;
 CREATE TABLE customer1 (
     custid int AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    age INT NOT NULL CHECK (age <= 18),
-    PRIMARY KEY (custid)
+    age INT NOT NULL,
+    PRIMARY KEY (custid),
+    CHECK (age <= 18)
 );
 
 INSERT INTO
