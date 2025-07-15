@@ -1,3 +1,10 @@
-use maindata;
+USE maindata;
 
-select job,deptno,ename from emp where ename like '%A%' and deptno in(10,20,30) and comm is null order by deptno limit 0,3;
+SELECT job, deptno, ename
+FROM emp
+WHERE
+    ename like '%A%'
+    AND deptno IN (10, 20, 30)
+    AND comm IS NULL
+ORDER BY deptno
+LIMIT 0, 3;
