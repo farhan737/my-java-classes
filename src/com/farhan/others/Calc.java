@@ -2,11 +2,11 @@ package com.farhan.others;
 
 public class Calc {
 
-    public boolean findOdd(int num) {
+    public boolean isOdd(int num) {
         return !(num % 2 == 0);
     }
 
-    public boolean findEven(int num) {
+    public boolean isEven(int num) {
         return num % 2 == 0;
     }
 
@@ -21,7 +21,7 @@ public class Calc {
         }
         return true;
     }
-
+    
     public int countDigits(int num) {
         int i = 0;
         while (num > 0) {
