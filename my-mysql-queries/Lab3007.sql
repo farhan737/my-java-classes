@@ -6,7 +6,7 @@ SELECT
     e1.sal AS employee_salary,
     e2.sal AS manager_salary,
     (e2.sal - e1.sal) AS salary_difference
-FROM emp AS e1
-    INNER JOIN emp AS e2 ON e1.mgr = e2.empno
+FROM emp AS e1, emp AS e2
 WHERE
-    e2.sal > e1.sal;
+    e2.sal > e1.sal
+    AND e1.mgr = e2.empno;
