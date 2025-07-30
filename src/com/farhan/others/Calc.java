@@ -34,28 +34,42 @@ public class Calc {
 	public int sumOfOddDigits(int num) {
 		int sumOfOdd = 0;
 		while (num > 0) {
-			if((num % 10) % 2 != 0) sumOfOdd += (num % 10);
+			if ((num % 10) % 2 != 0)
+				sumOfOdd += (num % 10);
 			num /= 10;
 		}
 		return sumOfOdd;
 	}
-	
+
 	public int sumOfEvenDigits(int num) {
 		int sumOfEven = 0;
 		while (num > 0) {
-			if((num % 10) % 2 == 0) sumOfEven += (num % 10);
+			if ((num % 10) % 2 == 0)
+				sumOfEven += (num % 10);
 			num /= 10;
 		}
 		return sumOfEven;
 	}
-	
+
 	public static int countOfEvenDigits(int num) {
 		int i = 0;
 		while (num > 0) {
-			if((num % 10) % 2 == 0) i++;
+			if ((num % 10) % 2 == 0)
+				i++;
 			num /= 10;
 		}
 		return i;
+	}
+
+	// needs to be properly implemented
+	public static int secontPerfectNumber(int num) {
+		int x = 0;
+		for (int i = 1; i < num; i++) {
+			if (num % i == 0) {
+				return x;
+			}
+		}
+		return x;
 	}
 
 	public boolean isArmstrong(int num) {
