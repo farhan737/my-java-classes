@@ -22,6 +22,15 @@ public class Calc {
 		return true;
 	}
 
+	public int printLargestPrime(int start, int end) {
+		for (int i = end; i >= start; i--) {
+			if (isPrime(i)) {
+				return i;
+			}
+		}
+		return 0;
+	}
+
 	public int countDigits(int num) {
 		int i = 0;
 		while (num > 0) {
@@ -95,5 +104,25 @@ public class Calc {
 			n *= 10;
 		}
 		return reverse;
+	}
+
+	public boolean isPalindrome(int num) {
+		if (num == reverseNum(num))
+			return true;
+		return false;
+	}
+
+	public void printNPalindromes(int start, int end, int range) {
+		int count = 0;
+		while (start <= end) {
+			if (isPalindrome(start)) {
+				count++;
+				if (count <= range) {
+					System.out.print(start + " ");
+				} else
+					break;
+			}
+			start++;
+		}
 	}
 }
