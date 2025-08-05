@@ -125,4 +125,42 @@ public class Calc {
 			start++;
 		}
 	}
+
+	public static int firstNonRepeating(int num) {
+		int temp = num;
+		int anotherTemp = num;
+		int currentNum;
+		int checkingNum;
+		int count;
+		while (num > 0) { // 2133, 213
+			count = 0; // 2 - > 0,
+			currentNum = num % 10; // 3, 3
+			temp = anotherTemp;
+			while (temp > 0) { // 2133
+				checkingNum = temp % 10; // 3, 3
+				if (currentNum == checkingNum) { //3 == 3, 3 == 3
+					count++;// 1, 2
+				}
+				if(count > 1) break;
+				temp /= 10; 
+			}
+			if(count == 1) {
+				return currentNum;
+			}
+			num /= 10;
+		}
+		return -1;
+	}
+
+	public static boolean isHarshad(int num) {
+		int temp = num;
+		int sum = 0;
+		while (num > 0) {
+			sum += num % 10;
+			num /= 10;
+		}
+		if (temp % sum == 0)
+			return true;
+		return false;
+	}
 }

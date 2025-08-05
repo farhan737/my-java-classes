@@ -1,5 +1,13 @@
 USE maindata;
 
-CALL new_procedure (@s, 7839);
+CALL increase_sal_10percent ();
 
-SELECT @s;
+CALL decrease_sal_10percent ();
+
+CALL `GetDeptSalaryStats` (10, @AVG, @NOTCOUNT);
+
+SELECT @AVG;
+
+SELECT @COUNT;
+
+SELECT * FROM emp;
