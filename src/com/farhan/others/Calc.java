@@ -138,18 +138,81 @@ public class Calc {
 			temp = anotherTemp;
 			while (temp > 0) { // 2133
 				checkingNum = temp % 10; // 3, 3
-				if (currentNum == checkingNum) { //3 == 3, 3 == 3
+				if (currentNum == checkingNum) { // 3 == 3, 3 == 3
 					count++;// 1, 2
 				}
-				if(count > 1) break;
-				temp /= 10; 
+				if (count > 1)
+					break;
+				temp /= 10;
 			}
-			if(count == 1) {
+			if (count == 1) {
 				return currentNum;
 			}
 			num /= 10;
 		}
 		return -1;
+	}
+
+	public static int factorial(int num) {
+		if (num == 1 || num == 0)
+			return 1;
+		else
+			return num * factorial(num - 1);
+	}
+
+	public static int sumOfDigits(int num) {
+		int sum = 0;
+		while (num > 0) {
+			int currentDigit = num % 10;
+			sum += currentDigit;
+			num /= 10;
+		}
+		return sum;
+	}
+
+	public static int productOfDigits(int num) {
+		int product = 1;
+		while (num > 0) {
+			int currentDigit = num % 10;
+			product *= currentDigit;
+			num /= 10;
+		}
+		return product;
+	}
+
+	public static boolean isStrongNumber(int num) {
+		int temp = num;
+		int sum = 0;
+		while (num > 0) {
+			int currentDigit = num % 10;
+			sum += factorial(currentDigit);
+			num /= 10;
+		}
+		if (sum == temp)
+			return true;
+		else
+			return false;
+	}
+
+	public static boolean isSpyNumber(int num) {
+		int sum = sumOfDigits(num);
+		int product = productOfDigits(num);
+		if (sum == product)
+			return true;
+		return false;
+	}
+
+	public static boolean isNeonNumber(int num) {
+		int squaredNumber = num * num;
+		int sumOfSquare = 0;
+		while (squaredNumber > 0) { 
+			sumOfSquare += squaredNumber % 10;
+			squaredNumber /= 10;
+		}
+		if (sumOfSquare == num)
+			return true;
+		else
+			return false;
 	}
 
 	public static boolean isHarshad(int num) {
