@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class MethodOverloading {
     public int ovMethod(char ch) {

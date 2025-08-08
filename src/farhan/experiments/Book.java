@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class Book {
     public String printDisc(int bookId, String title, String author, int price, double discount) {

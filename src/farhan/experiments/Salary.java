@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class Salary {
     public void calcSalary(double salary) {

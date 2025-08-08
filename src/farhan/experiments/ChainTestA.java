@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 class ChainTest {
     ChainTest() {

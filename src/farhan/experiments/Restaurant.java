@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 import java.util.Scanner;
 

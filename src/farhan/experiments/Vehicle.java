@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class Vehicle {
 	public String type;

@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class Car2 extends Vehicle2{
     public String carType;

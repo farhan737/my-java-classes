@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class BitwiseSwap {
 	public static void main(String[] args) {

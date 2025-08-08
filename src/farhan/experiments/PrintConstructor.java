@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class PrintConstructor {
     public PrintConstructor(String brand, String model, int year, int price) {

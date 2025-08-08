@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class Bank {
     static Long accountNumber = 62310100119L;

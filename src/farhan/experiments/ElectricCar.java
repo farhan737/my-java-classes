@@ -1,4 +1,4 @@
-package farhan.exeperiments;
+package farhan.experiments;
 
 public class ElectricCar extends Car {
 	public int batteryCapacity;
