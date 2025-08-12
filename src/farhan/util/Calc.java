@@ -205,7 +205,7 @@ public class Calc {
 	public static boolean isNeonNumber(int num) {
 		int squaredNumber = num * num;
 		int sumOfSquare = 0;
-		while (squaredNumber > 0) { 
+		while (squaredNumber > 0) {
 			sumOfSquare += squaredNumber % 10;
 			squaredNumber /= 10;
 		}
@@ -225,5 +225,26 @@ public class Calc {
 		if (temp % sum == 0)
 			return true;
 		return false;
+	}
+
+	public boolean isPalinPrime(int n) {
+		if (isPalindrome(n) && isPrime(n))
+			return true;
+		return false;
+	}
+
+	public boolean isSmithNumber(int num) { // 666
+		int sumOfDigits = sumOfDigits(num);
+		int sumOfPrimeFactors = 0;
+		while(!isPrime(num)) {
+			for(int i = 2;i < num; i++) {
+				if(num % i == 0 && isPrime(i)) {
+					sumOfPrimeFactors += sumOfDigits(i);
+					num /= i;
+				}
+			}
+			if(isPrime(num)) sumOfPrimeFactors += sumOfDigits(num); 
+		}
+		return sumOfDigits == sumOfPrimeFactors;
 	}
 }
