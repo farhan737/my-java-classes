@@ -1,5 +1,5 @@
 # JAVA INTRODUCTION - 1  
-### What is Java?  
+## What is Java?  
 Java is simple, high-level, platform independent, robust, secure, multi-threadedd and object-oriented programming language.
 
 ### What is JDK?  
@@ -137,3 +137,7 @@ public class Main {
 1. a **reference** is the address of an **object.**
 2. an **object** is a real-time entity of a **class.** 
 3. a **class** is a blueprint of an **object**, meaning its the plan or design or overview or architecture or template of its **objects.** 
+4. an **object** is also a **instance** of a class
+
+
+
