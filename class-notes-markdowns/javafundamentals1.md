@@ -63,4 +63,66 @@ a block is a collection or group of statements.
 ```  
 #### difference between a method and a block 
 - methods should be called explicitly
-- blocks will be loaded without calling
+- blocks will be loaded without calling  
+#### key points to know before trying to run a java program:
+- the file extension for java programs is **.java**.  
+example: ```Banking.java```, ```Users.java``` 
+- to run or execute a java program we need to first compile the java program.  
+**Compilations:** it is the process converting source code into byte code.  
+**Executions:** it is the process of converting byte code into native code *(Operating System specific)*.  
+**syntax:**  
+```java
+javac <classname>.java
+```
+**example:**
+```java
+javac Banking.java
+```  
+- finally to execute the program we do it by.
+**syntax:**
+```java
+java <classname>
+```  
+**example:**
+```java
+java User
+```
+
+### Example java program to print `hello world!!`  
+`Main.java`
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("hello world!!");
+    }
+}
+```
+
+**compilations and execution**:
+```java
+> javac Main.java
+> java Main
+> hello world!!
+```  
+### key points and observations: 
+1. class name here is Main in the line  
+`public class Main {}`
+2. inside the class block there is main() method in the line  
+`public static void main(String[] args) {}` 
+3. the `main()` method is crucial for executing a java program.
+
+### key question here:  
+1. what is the `main()` method?  
+**answer:**  
+    - the `main()` method is the entry point for a java program.   
+    - without the `main()` method there is no chance of executing a java program.  
+    - a program can still compile without a `main()` method.  
+    - trying to execute a program without having a `main()` will result in a compile time error.  
+2. why do we need the `main()` method?  
+**answer:**
+    - in the **JVM**, java configured the `main()` method for executing the program. 
+3. what is  `System`, `out`, `println` ?  
+**answer:**
+    - `System` is a **pre-defined class** in `java.lang` package.
+    - `out` is a **static reference variable** from the `System` class.
+    - `println()` is a method from the `PrintStream` class.
