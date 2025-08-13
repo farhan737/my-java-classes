@@ -1,4 +1,7 @@
 # JAVA INTRODUCTION - 1  
+### What is Java?  
+Java is simple, high-level, platform independent, robust, secure, multi-threadedd and object-oriented programming language.
+
 ### What is JDK?  
 **JDK** stands for **Java Development Kit**. We need JDK to develop Java Applications in our system.  
 ### What is JRE?  
@@ -64,6 +67,9 @@ a block is a collection or group of statements.
 #### difference between a method and a block 
 - methods should be called explicitly
 - blocks will be loaded without calling  
+### java is high-level language:
+- **high-level language** like java cannot be directly understood by the **operating system**. if we want the operating system to understand the java code first we need convert the high-level java code to **machine level code** or **native code.**  
+
 #### key points to know before trying to run a java program:
 - the file extension for java programs is **.java**.  
 example: ```Banking.java```, ```Users.java``` 
@@ -78,7 +84,7 @@ javac <classname>.java
 ```java
 javac Banking.java
 ```  
-- finally to execute the program we do it by.
+- finally to execute the program we do it by.  
 **syntax:**
 ```java
 java <classname>
@@ -126,3 +132,8 @@ public class Main {
     - `System` is a **pre-defined class** in `java.lang` package.
     - `out` is a **static reference variable** from the `System` class.
     - `println()` is a method from the `PrintStream` class.
+
+### key points about class, objects and references:
+1. a **reference** is the address of an **object.**
+2. an **object** is a real-time entity of a **class.** 
+3. a **class** is a blueprint of an **object**, meaning its the plan or design or overview or architecture or template of its **objects.** 
