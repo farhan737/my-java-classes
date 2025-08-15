@@ -26,4 +26,4 @@ JVM is responsible for executing the java programs.
 4. **JNI (Java Native Interfaces)**
 5. **native method libraries**
 
-![Architecture](JVMarchitecture.svg)  
+![JVMArchitecture](JVMarchitecture.svg)  
