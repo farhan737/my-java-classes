@@ -128,9 +128,9 @@ example:
 public class Cricketer {
 
     //instance variables
-    int jerseyNo = 7;
-    String name = "MS Dhoni";
-    int age = 60;
+    int jerseyNo;
+    String name;
+    int age;
 
     public static void main(String[] args) {
 
@@ -159,6 +159,33 @@ MS DHONI
 3. after creating an object for the class we are going to the object reference variable to access the instance datamembers.
 4. The data initialized through an object belongs specifically to that object; hence, different objects can hold different values for the same instance variable.
 5. if as a requirement we don't want the data to change from one object to another object we will use `static` variables an `static` methods instead of instance variables and methods.
-
 ![class object creation](ClassObjectCreation.svg)
+6. here when we create another object to the same class, a copy of variables which is seperate from the first one is stored in the memory
+```java
+public class Cricketer {
 
+    //instance variables
+    int jerseyNo;
+    String name;
+    int age;
+
+    public static void main(String[] args) {
+
+        //creating an object *dhoni* for the class *Cricketer*
+        Cricketer dhoni = new Cricketer(); 
+        dhoni.name = "MS DHONI";
+        dhoni.age = 43;
+
+        //creating another object *kohli* for the same class
+        Cricketer kohli = new Crickter();
+        kohli.name = "KOHLI";
+        kohli.jerseyNo = 18;
+    }
+}
+```
+![when two objects are created](anotherobject.svg)  
+7. The `main()` method execution happens in the Stack Area, where a stack frame is created for it.  
+8. All `static` methods (like main and others) are stored in the Method Area.  
+9. When a `static` method is invoked (e.g., inside main), a stack frame for that method is pushed onto the Stack Area; once execution completes, the frame is unloaded from the stack.  
+10. whenever you create an object for a class it will also loaded the **instance** methods of the into the heap memory in the same way it does for the variables.  
+11. just creating an object for the class does not load the instance methods into the stack area, for that you will need to call those methods explicitly as we did with static methods but by using using the object's reference variable and after execution it will be removed from the stack area. 
