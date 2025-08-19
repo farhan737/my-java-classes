@@ -170,6 +170,16 @@ public class Calc {
 		return sum;
 	}
 
+	public int sumOfPoweredDigits(int num, int power) {
+		int sum = 0;
+		while (num > 0) {
+			int currentDigit = num % 10;
+			sum += Math.pow(currentDigit, power);
+			num /= 10;
+		}
+		return sum;
+	}
+
 	public static int productOfDigits(int num) {
 		int product = 1;
 		while (num > 0) {
@@ -236,15 +246,40 @@ public class Calc {
 	public boolean isSmithNumber(int num) { // 666
 		int sumOfDigits = sumOfDigits(num);
 		int sumOfPrimeFactors = 0;
-		while(!isPrime(num)) {
-			for(int i = 2;i < num; i++) {
-				if(num % i == 0 && isPrime(i)) {
+		while (!isPrime(num)) {
+			for (int i = 2; i < num; i++) {
+				if (num % i == 0 && isPrime(i)) {
 					sumOfPrimeFactors += sumOfDigits(i);
 					num /= i;
 				}
 			}
-			if(isPrime(num)) sumOfPrimeFactors += sumOfDigits(num); 
+			if (isPrime(num))
+				sumOfPrimeFactors += sumOfDigits(num);
 		}
 		return sumOfDigits == sumOfPrimeFactors;
+	}
+
+	public boolean isHappyNumber(int n) {
+		int temp = n;
+		String memory = "";
+		do {
+			temp = sumOfPoweredDigits(temp, 2);
+			memory += " " + temp;
+			if (temp == 1) {
+				System.out.println(memory);
+				return true;
+			}
+
+		} while (temp != n);
+		return false;
+	}
+
+	public boolean isDisariumNumber(int num) {
+		int sum = 0;
+		String numToString = Integer.toString(num);
+		for (int i = 0; i < numToString.length(); i++) {
+			sum += Math.pow(Character.getNumericValue(numToString.charAt(i)), i + 1);
+		}
+		return sum == num;
 	}
 }

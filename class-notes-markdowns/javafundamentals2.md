@@ -158,4 +158,7 @@ MS DHONI
 2. When an object of the class is created, its instance data members (non-static variables) are stored in the **Heap Area.**
 3. after creating an object for the class we are going to the object reference variable to access the instance datamembers.
 4. The data initialized through an object belongs specifically to that object; hence, different objects can hold different values for the same instance variable.
+5. if as a requirement we don't want the data to change from one object to another object we will use `static` variables an `static` methods instead of instance variables and methods.
+
+![class object creation](ClassObjectCreation.svg)
 
