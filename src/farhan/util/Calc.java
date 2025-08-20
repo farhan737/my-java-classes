@@ -282,4 +282,30 @@ public class Calc {
 		}
 		return sum == num;
 	}
+
+	public boolean isDuckNumber(String num) {
+		if (num.charAt(0) == '0')
+			return false;
+		for (int i = 1; i < num.length(); i++) {
+			if ((int) num.charAt(i) >= 48 && (int) num.charAt(i) <= 57) {
+				if ((int) num.charAt(i) == '0')
+					return true;
+			}
+		}
+		return false;
+	}
+
+	public int printNthFibonacci(int n) {
+		int count = 1;
+		int a = 0;
+		int b = 1;
+		int c = 0; 
+		while (count != n) {
+			c = a + b;
+			a = b;
+			b = c;
+			count++;
+		}
+		return a;
+	}
 }
