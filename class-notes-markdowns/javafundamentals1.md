@@ -9,7 +9,7 @@ Java is simple, high-level, platform independent, robust, secure, multi-threaded
 ### What is JVM?  
 **JVM** stands for **Java Virtual Machine**. It is the environment to execute java programs in out system. **execution** means converting **byte code** into OS specific **native code**.  
 #### JDK = JRE + JVM  
-![java structure](architecture.svg)  
+![java structure](./assets/architecture.svg)  
 ### What does a class contain?
 firstly a  class contains 
 1. **data members** (variables + methods)

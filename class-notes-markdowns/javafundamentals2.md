@@ -26,7 +26,7 @@ JVM is responsible for executing the java programs.
 4. **JNI (Java Native Interfaces)**
 5. **native method libraries**
 
-![JVMArchitecture](JVMarchitecture.svg)  
+![JVMArchitecture](./assets/JVMarchitecture.svg)  
 
 ## Classloader subsystem
 ### Loading:
@@ -161,7 +161,7 @@ MS DHONI
 3. after creating an object for the class we are going to the object reference variable to access the instance datamembers.
 4. The data initialized through an object belongs specifically to that object; hence, different objects can hold different values for the same instance variable.
 5. if as a requirement we don't want the data to change from one object to another object we will use `static` variables an `static` methods instead of instance variables and methods.
-![class object creation](ClassObjectCreation.svg)
+![class object creation](./assets/ClassObjectCreation.svg)
 6. here when we create another object to the same class, a copy of variables which is seperate from the first one is stored in the memory
 ```java
 public class Cricketer {
@@ -185,7 +185,7 @@ public class Cricketer {
     }
 }
 ```
-![when two objects are created](anotherobject.svg)  
+![when two objects are created](./assets/anotherobject.svg)  
 7. The `main()` method execution happens in the Stack Area, where a stack frame is created for it.  
 8. All `static` methods (like main and others) are stored in the Method Area.  
 9. When a `static` method is invoked (e.g., inside main), a stack frame for that method is pushed onto the Stack Area; once execution completes, the frame is unloaded from the stack.  
@@ -223,7 +223,73 @@ this generation stores objects that have survived multiple garbage collection cy
 major garbage collection (also known as **full GC**) is performed less frequently in the old generation. it involves collecting unreachable objects from this generation.
 
 3. **perm generation (also known as metaspace from 1.8 onwards):**
-while not a primary focus, it's worth mentioning that some JVMs have a permanent generation (or metaspace in newer versions) that stores class metadata.
+while not a primary focus, it's worth mentioning that some JVMs have a permanent generation (or metaspace in newer versions) that stores class metadata.  
+***note:***  
+class level objects can be created using `static` and these object reside in the permanent generation or metaspace.  
+    ```java
+    public class Main {
+
+        // class level object
+        static Main obj = new Main();
+        public static void main(String[] args) {
+            
+        }
+    }
+    ```
+
 
 ### Hotspot heap structure
-![heap structure](heapStructure.svg)
+![heap structure](./assets/heapStructure.svg)
+
+**example for manual garbage collection**
+- Nullifying the objects:  
+    `Main.java`  
+    ```java
+    public class Employee {
+        public static void main(String[] args) {
+            Employee emp1 = new Employee();
+            // creating object 'emp1' for the 'Employee' class
+            
+            Employee emp2 = new Employee();
+            System.out.println(emp2);
+            // here the address of 'emp2' will be different from the address of 'emp1'
+
+            System.out.println(emp1);
+            // here we are printing the address of the object 
+            // the output will look something like packagelocation.Employee@2341a43
+
+            emp1 = null;
+            // here we are explicitly assigning `null` to the object 'emp1'
+            // and when an object is explicitly assigned `null` then it is eligible for garbage collection 
+            // here after the object `emp1` is assigned `null` its original address is reused by the next object that is created 
+            Employee emp
+               
+        }
+    }
+    ```
+- Explicity calling the `gc()` to run the garbage collector  
+    `GCDemo.java`
+    ```java
+    public class GCDemo {
+        public static void main(String[] args) {
+            GCDemo obj1 = new GCDemo();
+            GCDemo obj2 = new GCDemo();
+
+            // Nullify references → eligible for GC
+            obj1 = null;
+            obj2 = null;
+
+            // Request GC
+            System.gc();
+
+            System.out.println("End of main method");
+        }
+
+        @Override
+        protected void finalize() throws Throwable {
+            System.out.println("Garbage Collector called and object destroyed");
+        }
+    }
+
+    ```
+- 
