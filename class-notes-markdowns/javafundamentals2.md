@@ -261,12 +261,18 @@ class level objects can be created using `static` and these object reside in the
             emp1 = null;
             // here we are explicitly assigning `null` to the object 'emp1'
             // and when an object is explicitly assigned `null` then it is eligible for garbage collection 
+
+            System.out.println(emp2);
             // here after the object `emp1` is assigned `null` its original address is reused by the next object that is created 
-            Employee emp
-               
         }
     }
-    ```
+    ```  
+    **output:**  
+    ```  
+    packagelocation.Employee@2344af65
+    packagelocation.Employee@314ge234
+    packagelocation.Employee@2344af65
+    ```  
 - Explicity calling the `gc()` to run the garbage collector  
     `GCDemo.java`
     ```java
@@ -289,7 +295,65 @@ class level objects can be created using `static` and these object reside in the
         protected void finalize() throws Throwable {
             System.out.println("Garbage Collector called and object destroyed");
         }
+        // here the finalize() method is called whenever memory address  of one object is resigned to another object  
     }
 
     ```
-- 
+    **output:**
+    ```
+    Garbage Collector called and object destroyed
+    End of main method
+    ```
+
+- Ressigning the objects  
+    ```java
+    public class Employee {
+        public static void main(String[] args) {
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee();
+            System.out.println(emp1);
+            System.out.println(emp2);
+
+            emp2 = emp1 // assigning the reference address of emp1 to emp2
+            // here the memory for the object `emp2` is eligible for gc after it gets assign the reference address of `emp1` 
+            System.out.println(emp1);
+            System.out.println(emp2);
+        }
+
+        @Override
+        protected void finalize() throws Throwable {
+            System.out.println("finalize() was called");
+        }
+    }  
+    ```  
+    **output:**  
+    ```
+    packagelocation.Employee@2344af65
+    packagelocation.Employee@314ge234
+    finalize() was called
+    packagelocation.Employee@2344af65
+    packagelocation.Employee@2344af65
+    ```
+
+### Key questions on JVM: 
+1. what are the key differences between `C`, `C++` and `Java` ? 
+2. why we need to learn java when compare to other programming languages ?
+3. why we need the **JVM** ?
+4. explain about the **JVM** architecture with memory management ?
+5. explain about the static vs instance variables and blocks  ?
+6. what a class contains ?
+7. what is static memory allocation ?
+8. what is the difference between static memory allocation vs dynamic memory allocation ?
+9. what about class, object ?
+10. difference between interpreter vs **JIT** compiler ?
+11. explain about difference types of class loaders ?
+12. explain the differences between stack area vs heap area vs method area ?
+13. what is thread in the view of **JVM** ?
+14. explain about `main()` method ?
+15. explain about `System`, `out`, `println()` ?
+16. explain about **Java File Structure** ?
+17. what are the Java features ?
+18. what is compilation and execution ?
+19. explain the terms source code vs byte code vs native code ?
+20. explain the difference between **JRE** vs **JDK** vs **JVM** ?
+
