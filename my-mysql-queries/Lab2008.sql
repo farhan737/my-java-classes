@@ -1,3 +1,5 @@
+USE maindata
+
 CALL return_nth_highest_from_all_departments(1);
 
 SET list = (SELECT DISTINCT deptno FROM emp);

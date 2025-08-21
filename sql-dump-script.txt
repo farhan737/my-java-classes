@@ -1,0 +1,10 @@
+mysqldump -u root -p \
+  --all-databases \
+  --single-transaction \
+  --routines \
+  --events \
+  --triggers \
+  --flush-privileges \
+  --flush-logs \
+  --hex-blob \
+  > full_dump_$(date +%Y-%m-%d_%H-%M-%S).sql

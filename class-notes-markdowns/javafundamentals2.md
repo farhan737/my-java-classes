@@ -28,6 +28,7 @@ JVM is responsible for executing the java programs.
 
 ![JVMArchitecture](JVMarchitecture.svg)  
 
+## Classloader subsystem
 ### Loading:
 During Loading, the **JVM** checks if the `.class` file can be located by the Bootstrap, Extension, and Application ClassLoaders (in a parent-delegation order). If none of them can find it, the **JVM** throws a `ClassNotFoundException` (or `NoClassDefFoundError` in some cases).  
 
@@ -37,7 +38,8 @@ During **Linking**, the **JVM** ensures the loaded bytecode is safe and correct 
 ### Initialization:
 **Initialization** is the final step where the **JVM** assigns actual values to `static` variables and executes `static` blocks, preparing the class for use.
 
-## Static and Instance variables:
+## Runtime data area
+### Static and Instance variables:
 
 example code:  
 `Cricketer.java`  
@@ -188,4 +190,40 @@ public class Cricketer {
 8. All `static` methods (like main and others) are stored in the Method Area.  
 9. When a `static` method is invoked (e.g., inside main), a stack frame for that method is pushed onto the Stack Area; once execution completes, the frame is unloaded from the stack.  
 10. whenever you create an object for a class it will also loaded the **instance** methods of the into the heap memory in the same way it does for the variables.  
-11. just creating an object for the class does not load the instance methods into the stack area, for that you will need to call those methods explicitly as we did with static methods but by using using the object's reference variable and after execution it will be removed from the stack area. 
+11. just creating an object for the class does not load the instance methods into the stack area, for that you will need to call those methods explicitly as we did with static methods but by using using the object's reference variable and after execution it will be removed from the stack area.  
+## Execution engine:  
+1. **Interpreter:**  
+    - Reads bytecode instructions line by line and executes them.
+    - It starts execution quickly since there’s no need for conversion into machine code in advance.
+    - However, execution is slower overall because each instruction must be translated repeatedly each time it runs.
+
+2. **JIT (Just-In-Time) Compiler:**
+    - When the JVM notices that a method (or block of code) is being executed many times (a “hot spot”), it compiles that part of bytecode into native machine code.
+    - Once compiled, the JVM can directly execute the native code, making repeated execution much faster than interpretation.
+
+3. **Garbage Collector:**  
+    - In Java, unused or unreferenced objects are called garbage. These objects still take up memory, even though the program no longer needs them.
+    - In languages like C/C++, programmers must manage memory manually using special functions (like malloc and free) to allocate and release memory.
+    - But in Java, the Garbage Collector (GC) automatically frees up memory by removing objects that are no longer in use. The JVM identifies such objects and clears them from memory, so developers don’t have to do it themselves.
+
+    **How are objects are eligible for garbage:**  
+    An object can become eligible for Garbage Collection in many situations, such as:
+    1. When it is explicitly assigned to `null `.
+    2. When one object reference is reassigned to another (the old one is no longer used).
+    3. When objects are created inside methods (they are removed after the method finishes, if not returned).
+    4. When using anonymous objects (objects without a reference).  
+### TYPES OF GARBAGE COLLECTION:
+1. **young generation (short lived objects):**
+this is where new objects are initially allocated. it is designed for objects with short lifespans.  
+structure:
+    - *eden space:* this is where most new objects are created.
+    - *survivor spaces*(`S0` and `S1`): these spaces hold objects that have survived minor garbage collection cycles.
+2. **old generation (long lived objects):**
+this generation stores objects that have survived multiple garbage collection cycles in the young generation, indicating they are likely to be long-lived.  
+major garbage collection (also known as **full GC**) is performed less frequently in the old generation. it involves collecting unreachable objects from this generation.
+
+3. **perm generation (also known as metaspace from 1.8 onwards):**
+while not a primary focus, it's worth mentioning that some JVMs have a permanent generation (or metaspace in newer versions) that stores class metadata.
+
+### Hotspot heap structure
+![heap structure](heapStructure.svg)
