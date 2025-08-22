@@ -1,0 +1,2 @@
+USE maindata;
+SELECT FACTORIAL(4);
