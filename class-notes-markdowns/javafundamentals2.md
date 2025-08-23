@@ -107,3 +107,6 @@ It is important to note that when we create an object of a class, the instance v
     <td>true or false</td>
   </tr>
 </table>
+
+how a number is stored inside a number datatype
+![how it is stored inside byte](./assets/bytestorage.svg)
