@@ -51,6 +51,9 @@ false
 ```  
 ***note:***  
 It is important to note that when we create an object of a class, the instance variables (fields) of primitive data types are automatically assigned default values by the JVM if no explicit value is provided. However, this does not apply to local variables inside methods such as `main()`. For local variables, the JVM does not assign any default value, and they must be explicitly initialized before use, otherwise a compilation error will occur.  
+
+### variable size and range for every primitive data type
+
 <table border = 1>
   <tr>
     <th>Data Type</th>
@@ -108,5 +111,72 @@ It is important to note that when we create an object of a class, the instance v
   </tr>
 </table>
 
-how a number is stored inside a number datatype
+### how to assign values to a variable
+```java
+byte bInteger = 120;
+short sInteger = 3000;
+int integer = 2000000;
+long lInteger = 23040020201L; // we can also use small `l` at the end here 
+float floating = 2.142F; // we can also use small `f` at the end here
+double dFloating = 3124.1245235D; // we can use `d` or completely skip the letter at the end. 
+```
+
+### how a number is stored inside a number datatype  
 ![how it is stored inside byte](./assets/bytestorage.svg)
+for negative values 2's compliment is applied and the 8th bit for byte is the MSB(Most Significant Bit).
+### type casting:  
+we can type cast meaning convert a value from one datatype to other.
+#### implicit type casting:  
+- for integer and floating point datatypes a lower range datatype can implicitly type casted to higher range datatype.
+  ```java
+  // for integer datatypes
+  int a = 20;
+  long b = a; // here `a` is getting implicitly type casted from int to long
+  byte c = 120;
+  short d = c; // here `c` is getting implicitly type casted from byte to short  
+  ```  
+  ```java
+  // for floating point datatypes
+  float a = 3.14f;
+  double b = a; // here the float `a` is getting implicitly type casted to double 
+  ```
+- it is not possible to type cast a boolean value to any other datatype
+- type casting a character to a integer databyte results in its **ACSII** value  
+  example:
+  ```java
+  char a = 'A';
+  int b = a;
+  System.out.println(b);
+  ```
+  output:
+  ```
+  65
+  ```
+- *note:* by default the integer literal values are of type `int` so when we assign a integer value to a datatype variable the compiler checks if the value is in the range of the taken datatype and narrow it down to that datatype.  
+  example:
+  ```java
+  byte num = 20: // here the literal 20 is if `int` datatype
+  // as 20 is with in the range of a `byte` it is narrowed down by the compiler 
+  ```
+- *note:* by default floating point literal is of the type `double` and if we try to store a floating point value without explicitly adding the `F`/`f` at the end here the compiler interprets this as a `double` literal being stored in to a `float` variable which is not possible without explicit typecasting.  
+  ```java
+  float num = 3.2532; // this is the wrong way to assign a value to a float
+  float num = 3.2532F; // this is the correct way 
+  ```  
+#### explicit typecasting:
+- explicit typecasting is the process of casting a higher range value to lower range datatype variable.
+examples:
+  ```java
+  int num1 = 120;
+  byte num2 = (byte) num1; // here the variable `num1` of `int` type is explicitly typecasted to `byte`.
+
+
+  long num3 = 1223343L;
+  int num4 = (int) num3; // here the variable `num3` of `long` type is explicitly type casted to `int`.
+
+  double float1 = 123.1324215213;
+  float float2 = (float) float1; // same here.
+  ```  
+- *warning:* Lossy type casting occurs when a value is converted to a smaller data type that cannot fully represent it, causing data loss.  
+example representation diagram:
+![lossy typecasting](<assets/Lossy conversion.svg>)
