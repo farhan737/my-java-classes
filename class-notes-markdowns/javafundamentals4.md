@@ -160,7 +160,3 @@ Integer num = null;
     <td>For objects only</td>
   </tr>
 </table>
-
----
-
-👉 Do you want me to also make a **mind map-style diagram (markdown-friendly)** for literals like you asked earlier for identifiers, or just keep it as a text + table format?
