@@ -294,7 +294,15 @@ public class Calc {
 		}
 		return false;
 	}
-
+	
+	public String reverseString(String str) {
+	    String reversed = "";
+	    for (int i = str.length() - 1; i >= 0; i--) {
+	        reversed += str.charAt(i);
+	    }
+	    return reversed;
+	}
+	
 	public int printNthFibonacci(int n) {
 		int count = 1;
 		int a = 0;

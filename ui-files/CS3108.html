@@ -1,0 +1,212 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #header {
+            background-color: beige;
+            position: fixed;
+            width: 100%;
+        }
+
+        #profile {
+            display: flex;
+            justify-content: end;
+        }
+
+
+        #navbar {
+            height: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #maincontent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #dashboard {
+            border: 1px black solid;
+            border-radius: 20px;
+            display: flex;
+            height: 150px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #dgroup {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 30px;
+            column-gap: 30px
+        }
+
+        .dcards {
+            border: 1px black solid;
+            border-radius: 20px;
+            height: 150px;
+            flex: 1;
+            padding: 20px;
+
+        }
+
+        #sidebar {
+            flex: 1;
+            border: 1px black solid;
+            padding: 20px;
+            align-items: center;
+
+        }
+
+
+        #analytics {
+            padding: 40px;
+            flex: 5;
+            border: 1px black solid;
+        }
+
+        .cardsgroup {
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            column-gap: 30px
+        }
+
+        #cards {
+            flex: 2;
+            padding: 20px;
+            border: 1px black solid;
+            border-radius: 20px;
+            height: 600px;
+        }
+
+        #forms {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+
+        .formcards {
+            border-radius: 20px;
+            padding: 20px;
+            height: 100px;
+            border: 1px black solid;
+
+        }
+
+        #address {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .address-items {
+            margin: 0px 5px;
+        }
+
+        .sidebarlinks {
+            border: 1px black solid;
+            margin: 15px 0px;
+            display: flex;
+            align-items: center;
+            height: 4%;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="header" style="margin-bottom: 100px;">
+        <div
+            style="border: 1px black solid; width: 100%;display: flex;flex-direction: row;align-content: space-between;">
+            <p> header</p>
+            <div id="profile" style="width: 30%;">
+                <input style="width: 70%;height: 100%;">
+                </input>
+                <div style="border-radius: 100%;background-color: grey;height: 60px;width: 60px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 100px;"></div>
+    <div id="navbar" style="border: 1px black solid;">
+        <div id="address">
+            <p class="address-items">dashboard</p>
+            <p class="address-items">></p>
+            <p class="address-items">analytics</p>
+        </div>
+        <p style="margin: 0px;">end</p>
+    </div>
+    <div id="maincontent" style="border: 1px black solid;">
+        <div id="sidebar">
+            <div class="sidebarlinks">
+                <p>home</p>
+            </div>
+            <div class="sidebarlinks">
+                <p>reports</p>
+            </div>
+            <div class="sidebarlinks">
+                <p>analytics</p>
+            </div>
+            <div class="sidebarlinks">
+                <p>database</p>
+            </div>
+            <div class="sidebarlinks">
+                <p>logout</p>
+            </div>
+        </div>
+        <div id="analytics">
+            <div id="dashboard">
+                <p>dashboard</p>
+            </div>
+            <div id="dgroup">
+                <div class="dcards">
+                    revenue
+                </div>
+                <div class="dcards">
+                    sales
+                </div>
+                <div class="dcards">
+                    performance
+                </div>
+            </div>
+            <div class="cardsgroup">
+                <div id="cards">
+                    cards
+                </div>
+                <div id="forms">
+                    <div class="formcards" style="flex: 2;">
+                        hello
+                    </div>
+                    <div class="formcards"
+                        style="flex:3; padding: 30px;display: flex;flex-direction: column;row-gap: 30px; justify-content: space-evenly;">
+                        <p>form</p>
+                        <input style="height: 20%;" type="text">
+                        <input style="height: 20%;" type="text">
+                        <button style="height: 20%;">submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer style="border: 1px black solid; padding: 10px">
+        <p>footer</p>
+    </footer>
+</body>
+
+
+</html>

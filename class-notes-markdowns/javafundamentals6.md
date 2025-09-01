@@ -179,3 +179,60 @@ class Demo {
 * Supports **overloading** and **chaining**.
 * Cannot be inherited but can be accessed using `super()`.
 * Used to set up initial values of objects in a clean and structured way.
+
+### Command line arguements
+
+Command line arguments in Java are inputs passed to a program during execution, allowing dynamic data to be supplied to the main method via the terminal.
+
+## How Command Line Arguments Work
+
+When a Java program runs, arguments are specified after the class name in the console—for example:  
+`java MyProgram arg1 arg2 arg3`.  
+These arguments are received by `main(String[] args)`, and stored in the `args` string array.
+
+## Key Features and Uses
+
+- Each argument is a **string**, and their number can be checked with `args.length`.
+- They allow customization at runtime without modifying source code.
+- Programs can handle different behaviors, configuration, or input values based on arguments supplied.
+
+## Example Usage
+
+A basic example:
+```java
+public class CommandLineExample {
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("No command line arguments provided.");
+        } else {
+            System.out.println("Command line arguments:");
+            for (int i = 0; i < args.length; i++)
+                System.out.println("Argument " + (i + 1) + ": " + args[i]);
+        }
+    }
+}
+```
+Running `java CommandLineExample apple orange 42` yields:
+```
+Command line arguments:
+Argument 1: apple
+Argument 2: orange
+Argument 3: 42
+```
+
+
+## Practical Benefits
+
+- **Flexibility**: Input can adapt program behavior at runtime.
+- **Automation**: Useful for batch processes and scripts.
+- **Usability**: Avoids hardcoded values, enabling greater interactivity.
+
+
+### about SOP (`System.out.println()`)
+
+`System.out.println()` in Java is a commonly used method to print output to the console (standard output) with a newline appended at the end. It belongs to the `PrintStream` class, which is accessed via the static member "`out`" of the `System` class.
+
+#### Key Components 
+- `System`: A final class in the java.lang package, providing access to system-related functionalities.
+- `out`: A public static instance of `PrintStream` in the System class, representing the standard output stream.
+- `println()`: A method of `PrintStream` that prints the argument passed to it and then moves the cursor to a new line.
