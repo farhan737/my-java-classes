@@ -294,20 +294,20 @@ public class Calc {
 		}
 		return false;
 	}
-	
+
 	public String reverseString(String str) {
-	    String reversed = "";
-	    for (int i = str.length() - 1; i >= 0; i--) {
-	        reversed += str.charAt(i);
-	    }
-	    return reversed;
+		String reversed = "";
+		for (int i = str.length() - 1; i >= 0; i--) {
+			reversed += str.charAt(i);
+		}
+		return reversed;
 	}
-	
+
 	public int printNthFibonacci(int n) {
 		int count = 1;
 		int a = 0;
 		int b = 1;
-		int c = 0; 
+		int c = 0;
 		while (count != n) {
 			c = a + b;
 			a = b;
@@ -315,5 +315,21 @@ public class Calc {
 			count++;
 		}
 		return a;
+	}
+
+	public boolean[] toBinary(int num) {
+		int index = 0;
+		while ((1 << index) <= num) {
+	        index++;
+	    }
+		index--;
+		boolean[] binary = new boolean[index + 1];
+		for (int i = index; i >= 0; i--) {
+	        if (num - (1 << i) >= 0) {
+	            binary[i] = true;
+	            num -= (1 << i);
+	        }
+	    }
+		return binary;
 	}
 }

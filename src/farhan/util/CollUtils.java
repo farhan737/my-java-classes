@@ -81,4 +81,33 @@ final public class CollUtils {
 		}
 		return palindrome;
 	}
+
+	public static void printRepeated(int[] numbers) {
+		int count = 0;
+	    for (int i = 0; i < numbers.length - 1; i++) {
+	        for (int j = i + 1; j < numbers.length; j++) {
+	            if (numbers[i] == numbers[j]) {
+	                int temp = numbers[i + 1];
+	                numbers[i + 1] = numbers[j];
+	                numbers[j] = temp;
+	            }
+	        }
+	    }
+	    for (int a : numbers) {
+	        System.out.println(a);
+	    }
+	    int i = 0;
+	    int j = 0;
+	    while(i < numbers.length) {
+	    	j = i;
+	    	while(j < numbers.length) {
+	    		if(numbers[i] != numbers[j]) {
+	    			i = j;
+	    		}
+	    		j++;
+	    	}
+	    	System.out.println(numbers[i]);
+	    }
+	}
+
 }
