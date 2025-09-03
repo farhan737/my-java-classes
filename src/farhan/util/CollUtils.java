@@ -84,30 +84,36 @@ final public class CollUtils {
 
 	public static void printRepeated(int[] numbers) {
 		int count = 0;
-	    for (int i = 0; i < numbers.length - 1; i++) {
-	        for (int j = i + 1; j < numbers.length; j++) {
-	            if (numbers[i] == numbers[j]) {
-	                int temp = numbers[i + 1];
-	                numbers[i + 1] = numbers[j];
-	                numbers[j] = temp;
-	            }
-	        }
-	    }
-	    for (int a : numbers) {
-	        System.out.println(a);
-	    }
-	    int i = 0;
-	    int j = 0;
-	    while(i < numbers.length) {
-	    	j = i;
-	    	while(j < numbers.length) {
-	    		if(numbers[i] != numbers[j]) {
-	    			i = j;
-	    		}
-	    		j++;
-	    	}
-	    	System.out.println(numbers[i]);
-	    }
+		for (int i = 0; i < numbers.length - 1; i++) {
+			for (int j = i + 1; j < numbers.length; j++) {
+				if (numbers[i] == numbers[j]) {
+					int temp = numbers[i + 1];
+					numbers[i + 1] = numbers[j];
+					numbers[j] = temp;
+				}
+			}
+		}
+		for (int a : numbers) {
+			System.out.println(a);
+		}
+	}
+	
+	//1(0,0) 2(0,1) 1 3
+	//3(1,0) 4(1,1) 2 4
+	public static void transposeMatrix(int[][] matrix) {
+		int[][] duplicateMatrix = new int[matrix[0].length][matrix.length];
+		for(int i = 0;i<matrix.length;i++) {
+			for(int j = 0;j < matrix[i].length;j++) {
+				duplicateMatrix[j][i] = matrix[i][j];
+			}
+		}
+		
+		for(int[] row :duplicateMatrix) {
+			for(int col : row) {
+				System.out.print(col+ " ");
+			}
+			System.out.println();
+		}
 	}
 
 }
