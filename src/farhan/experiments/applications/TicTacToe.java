@@ -1,5 +1,6 @@
 package farhan.experiments.applications;
 
+import java.lang.annotation.AnnotationTypeMismatchException;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -33,6 +34,8 @@ public class TicTacToe {
 				col = sc.nextInt();
 			} catch (ArrayIndexOutOfBoundsException e) {
 				playGame();
+			} catch (AnnotationTypeMismatchException e) {
+				playGame();
 			}
 			if (board[row][col] == ' ')
 				board[row][col] = currentPlayer;
@@ -52,11 +55,13 @@ public class TicTacToe {
 	}
 
 	public static boolean hasWon() {
+
 		// row checking
 		for (int i = 0; i < board.length; i++) {
 			if (board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer)
 				return true;
 		}
+
 		// column checking
 		for (int i = 0; i < board.length; i++) {
 			if (board[0][i] == currentPlayer && board[1][i] == currentPlayer && board[2][i] == currentPlayer)
