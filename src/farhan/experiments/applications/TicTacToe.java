@@ -1,6 +1,6 @@
 package farhan.experiments.applications;
 
-import java.lang.annotation.AnnotationTypeMismatchException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -20,28 +20,40 @@ public class TicTacToe {
 		}
 	}
 
+	public static void reset() {
+		row = 0;
+		col = 0;
+	}
+
 	public static void playGame() {
 		while (true) {
+			reset();
+			displayBoard();
 			if (count == 9) {
 				System.out.println("DRAWED. the game has ended.");
 				return;
 			}
-			displayBoard();
+
 			System.out.println("current player: " + currentPlayer);
 			System.out.println("enter position: ");
 			try {
 				row = sc.nextInt();
 				col = sc.nextInt();
-			} catch (ArrayIndexOutOfBoundsException e) {
-				playGame();
-			} catch (AnnotationTypeMismatchException e) {
-				playGame();
+			} catch (InputMismatchException e) {
+				System.err.println("invalid position, try again. at IN");
+				sc.nextLine(); // to clear the invalid input for the scanner buffer.
+				continue;
 			}
-			if (board[row][col] == ' ')
-				board[row][col] = currentPlayer;
-			else {
-				System.out.println("already occupied!!");
-				playGame();
+			try {
+				if (board[row][col] == ' ')
+					board[row][col] = currentPlayer;
+				else {
+					System.out.println("already occupied!!");
+					continue;
+				}
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.err.println("invalid position, try again. at AIO");
+				continue;
 			}
 
 			if (hasWon()) {
@@ -51,7 +63,9 @@ public class TicTacToe {
 			}
 			currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
 			count++;
+			reset();
 		}
+
 	}
 
 	public static boolean hasWon() {
