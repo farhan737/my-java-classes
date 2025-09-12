@@ -1,12 +1,12 @@
 package farhan.experiments.main;
 
-import farhan.util.CollUtils;
+import farhan.util.ArrayUtils;
 
 public class Lab2508 {
 	public static void main(String[] args) {
-		CollUtils c1 = new CollUtils();
+		ArrayUtils c1 = new ArrayUtils();
 		String[] numbers = { "10", "120", "23", "54" };
 		String[] reversed = c1.reverseArrayElements(numbers);
-		CollUtils.printForEach(reversed, ", ");
+		ArrayUtils.printForEach(reversed, ", ");
 	}
 }

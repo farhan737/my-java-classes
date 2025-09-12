@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            /* instead of % */
+            grid-template-rows: 200px 100px;
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .item {
+            background-color: grey;
+            display: flex;
+            /* enable flexbox */
+            justify-content: center;
+            /* center horizontally */
+            align-items: center;
+            /* center vertically */
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        style="background-color: grey;align-items: center;justify-content:center; display: flex;flex-direction: row;">
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+    </div>
+    <div style="height: 100px;"></div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+</body>
+
+</html>

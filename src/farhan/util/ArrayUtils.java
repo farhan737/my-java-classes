@@ -1,6 +1,6 @@
 package farhan.util;
 
-final public class CollUtils {
+final public class ArrayUtils {
 
 	Calc calc = new Calc();
 
@@ -97,23 +97,36 @@ final public class CollUtils {
 			System.out.println(a);
 		}
 	}
-	
-	//1(0,0) 2(0,1) 1 3
-	//3(1,0) 4(1,1) 2 4
+
+	// 1(0,0) 2(0,1) 1 3
+	// 3(1,0) 4(1,1) 2 4
 	public static void transposeMatrix(int[][] matrix) {
 		int[][] duplicateMatrix = new int[matrix[0].length][matrix.length];
-		for(int i = 0;i<matrix.length;i++) {
-			for(int j = 0;j < matrix[i].length;j++) {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
 				duplicateMatrix[j][i] = matrix[i][j];
 			}
 		}
-		
-		for(int[] row :duplicateMatrix) {
-			for(int col : row) {
-				System.out.print(col+ " ");
+
+		for (int[] row : duplicateMatrix) {
+			for (int col : row) {
+				System.out.print(col + " ");
 			}
 			System.out.println();
 		}
+	}
+
+	public static String returnLargest(String[] strings) {
+		int maxLength = 0;
+		for (String a : strings) {
+			if (maxLength < a.length())
+				maxLength = a.length();
+		}
+		for (String a : strings) {
+			if (maxLength == a.length())
+				return a;
+		}
+		return null;
 	}
 
 }

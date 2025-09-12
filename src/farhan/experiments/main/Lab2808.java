@@ -1,13 +1,13 @@
 package farhan.experiments.main;
 
-import farhan.util.CollUtils;
+import farhan.util.ArrayUtils;
 
 
 public class Lab2808 {
 	public static void main(String[] args) {
-		CollUtils c1 = new CollUtils();
+		ArrayUtils c1 = new ArrayUtils();
 		String[] original = {"123","121","323","434"};
 		String[] palindrome = c1.filterPalindrome(original);
-		CollUtils.printForEach(palindrome, "_");
+		ArrayUtils.printForEach(palindrome, "_");
 	}
 }
