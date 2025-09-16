@@ -1,7 +1,7 @@
 package farhan.util;
 
-public class Patterns {
-	public void printSquareWithNumbers(int side) {
+final public class Patterns {
+	public static void pattern1(int side) {
 //		1 	2 	3 	4 	5 	
 //		6 	7 	8 	9 	10	
 //		11 	12 	13 	14 	15 	
@@ -23,7 +23,7 @@ public class Patterns {
 		}
 	}
 
-	public void pattern1(int side) {
+	public static void pattern2(int side) {
 //		1	2	3	4	5	
 //		10	9	8	7	6	
 //		11	12	13	14	15	
@@ -45,4 +45,56 @@ public class Patterns {
 			System.out.println();
 		}
 	}
+
+	public static void pattern3(int size) {
+		for (int i = 1; i <= size; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+	}
+
+//	  _ _ _ _ _ _ 
+//	 |_|_|_|_|_|_|
+//	 |_|_|_|_|_|_|
+//	 |_|_|_|_|_|_|
+//	 |_|_|_|_|_|_|
+//	 |_|_|_|_|_|_|
+	public static void pattern4(int size) {
+		for (int i = 0; i < size; i++) {
+			if (i == 0)
+				System.out.println(" _".repeat(size));
+			System.out.print("|_".repeat(size));
+			System.out.println("|");
+		}
+	}
+
+//	* * * * 
+//	 * * *
+//	* * * * 
+//	 * * *
+//	* * * * 
+	public static void pattern5(int length, int width) {
+		for (int i = 0; i < length; i++) {
+			if (i % 2 == 0)
+				System.out.println("* ".repeat(width));
+			else
+				System.out.println(" *".repeat(width - 1));
+		}
+	}
+	public static void pattern6(int size) {
+	    // top half
+	    for (int i = size; i >= 0; i -= 2) {
+	        int spacesBefore = (size - i) / 2;
+	        System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i) + "*");
+	    }
+
+	    // bottom half
+	    for (int i = 2; i <= size; i += 2) {
+	        int spacesBefore = (size - i) / 2;
+	        System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i+1) + "*");
+	    }
+	}
+
 }

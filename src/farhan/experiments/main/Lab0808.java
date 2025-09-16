@@ -2,11 +2,10 @@ package farhan.experiments.main;
 
 import farhan.util.Patterns;
 
-public class Lab0808 extends Patterns{
+public class Lab0808{
 	public static void main(String [] args) {
-		Lab0808 l1 = new Lab0808();
-		l1.printSquareWithNumbers(5);
+		Patterns.pattern1(5);
 		System.out.println();
-		l1.pattern1(5);
+		Patterns.pattern2(5);
 	}
 }

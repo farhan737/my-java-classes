@@ -320,16 +320,30 @@ public class Calc {
 	public boolean[] toBinary(int num) {
 		int index = 0;
 		while ((1 << index) <= num) {
-	        index++;
-	    }
+			index++;
+		}
 		index--;
 		boolean[] binary = new boolean[index + 1];
 		for (int i = index; i >= 0; i--) {
-	        if (num - (1 << i) >= 0) {
-	            binary[i] = true;
-	            num -= (1 << i);
-	        }
-	    }
+			if (num - (1 << i) >= 0) {
+				binary[i] = true;
+				num -= (1 << i);
+			}
+		}
 		return binary;
+	}
+//	&& noRepeat[i] == 0 && noRepeat[j] == 0
+	
+//	noRepeat[i] = 1;
+//	noRepeat[j] = 1;
+	public static void sumToGet(int[] numbers, int num) {
+		int[] noRepeat = new int[numbers.length];
+		for (int i = 0; i < numbers.length; i++) {
+			for (int j = i; j < numbers.length; j++) {
+				if (numbers[i] + numbers[j] == num ) {
+					System.out.println(numbers[i] + " " + numbers[j]);
+				}
+			}
+		}
 	}
 }
