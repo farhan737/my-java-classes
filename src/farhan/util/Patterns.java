@@ -1,25 +1,27 @@
 package farhan.util;
 
 final public class Patterns {
+	/**
+	 * Prints a square number pattern of size × size.
+	 * <p>
+	 * Example for side = 5:
+	 * 
+	 * <pre>
+	 *  1   2   3   4   5
+	 *  6   7   8   9   10
+	 *  11  12  13  14  15
+	 *  16  17  18  19  20
+	 *  21  22  23  24  25
+	 * </pre>
+	 *
+	 * @param side the dimension of the square (number of rows/columns)
+	 */
 	public static void pattern1(int side) {
-//		1 	2 	3 	4 	5 	
-//		6 	7 	8 	9 	10	
-//		11 	12 	13 	14 	15 	
-//		16 	17 	18 	19 	20 	
-//		21 	22 	23 	24 	25 
-		boolean state = false;
 		for (int i = 1; i <= side * side; i++) {
-
-			if (state) {
-				System.out.print(i + " \t");
-				if (i % side == 0)
-					System.out.println();
-			} else {
-				System.out.print(i + " \t");
-				if (i % side == 0)
-					System.out.println();
+			System.out.print(i + " \t");
+			if (i % side == 0) {
+				System.out.println();
 			}
-
 		}
 	}
 
@@ -83,18 +85,19 @@ final public class Patterns {
 				System.out.println(" *".repeat(width - 1));
 		}
 	}
-	public static void pattern6(int size) {
-	    // top half
-	    for (int i = size; i >= 0; i -= 2) {
-	        int spacesBefore = (size - i) / 2;
-	        System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i) + "*");
-	    }
 
-	    // bottom half
-	    for (int i = 2; i <= size; i += 2) {
-	        int spacesBefore = (size - i) / 2;
-	        System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i+1) + "*");
-	    }
+	public static void pattern6(int size) {
+		// top half
+		for (int i = size; i >= 0; i -= 2) {
+			int spacesBefore = (size - i) / 2;
+			System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i) + "*");
+		}
+
+		// bottom half
+		for (int i = 2; i <= size; i += 2) {
+			int spacesBefore = (size - i) / 2;
+			System.out.println(" ".repeat(spacesBefore) + "*" + " ".repeat(i + 1) + "*");
+		}
 	}
 
 }

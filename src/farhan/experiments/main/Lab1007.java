@@ -1,4 +1,6 @@
-package farhan.experiments;
+package farhan.experiments.main;
+
+import farhan.experiments.MultiConstructor;
 
 public class Lab1007 {
     public static void main(String[] args) {
