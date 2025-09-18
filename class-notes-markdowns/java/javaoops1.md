@@ -115,7 +115,7 @@ class ChildClass extends ParentClass {
 3. Multiple Inheritance.**
 4. Heirarchial Inheritance.
 5. Cyclic Inheritance.**  
-** Multiple Inheritance is not possible in jave using the conventional method but we can achieve multiple inheritance using interfaces, cyclic inheritance is not possible in java.
+** Multiple Inheritance is not possible in jave using the conventional method but we can achieve multiple inheritance in java using interfaces, cyclic inheritance is not possible in java.
 
 All user-defined classes in java implicitly extend the `Object` class and if a user-defined class already extends a parent class then that parent class extends the object class implicitly and provides the child class access to the `Object` class. the `Object` class is the root of the class heirarchy is the super class for all classes in java.
 

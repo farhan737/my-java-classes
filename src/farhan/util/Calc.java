@@ -36,6 +36,7 @@ public class Calc {
 				return false;
 			}
 		}
+		
 		return true;
 	}
 
@@ -338,6 +339,12 @@ public class Calc {
 		return false;
 	}
 
+	/**
+	 * return the reverse String of the given String
+	 * 
+	 * @param str
+	 * @return
+	 */
 	public String reverseString(String str) {
 		String reversed = "";
 		for (int i = str.length() - 1; i >= 0; i--) {

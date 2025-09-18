@@ -100,4 +100,34 @@ final public class Patterns {
 		}
 	}
 
+	public static int pat7(int size) {
+		int count = 0;
+		for (int i = size; i > 0; i--) {
+			for (int j = 0; j < i; j++) {
+				count++;
+			}
+		}
+		return count * 2;
+	}
+
+	public static void pattern7(int size) {
+		int c = 1;
+		int spaces = 0;
+		int hLimit = pat7(size);
+		for (int i = size; i > 0; i--) {
+			System.out.print("\t".repeat(spaces));
+			spaces++;
+			for (int j = 0; j < i; j++) {
+				System.out.print(c + "\t");
+				c++;
+			}
+			hLimit = hLimit - i;
+			for (int j = 0; j < i; j++) {
+				System.out.print(hLimit + 1 + "\t");
+				hLimit++;
+			}
+			hLimit = hLimit - i;
+			System.out.println();
+		}
+	}
 }
