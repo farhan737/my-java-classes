@@ -18,5 +18,6 @@ public class CS0809 {
 		} catch (IndexOutOfBoundsException e) {
 			System.err.println("Student not found - invalid index");
 		}
+		sc.close();
 	}
 }

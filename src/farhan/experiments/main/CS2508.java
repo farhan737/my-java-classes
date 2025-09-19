@@ -25,5 +25,6 @@ public class CS2508 {
 				System.out.println("failed to authenticate at LDAPAuthenticator");
 		} else
 			System.out.println("failed to authenticate at DatabaseAuthenticator");
+		sc.close();
 	}
 }
