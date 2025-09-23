@@ -129,4 +129,8 @@ final public class ArrayUtils {
 		return null;
 	}
 
+	public static String returnOrdered(String unordered) {
+		return unordered;
+	}
+
 }

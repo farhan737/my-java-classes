@@ -130,4 +130,21 @@ final public class Patterns {
 			System.out.println();
 		}
 	}
+
+	public static void pattern8(String name) {
+		int start = 65;
+		for (int i = 0; i < name.length(); i++) {
+			for (int j = 0; j < name.length(); j++) {
+				if (j == i) {
+					System.out.print(name.charAt(i) + "\t");
+				} else if (j == name.length() - i - 1) {
+					System.out.print(name.charAt(i) + "\t");
+				} else {
+					System.out.print((char) start + "\t");
+					start++;
+				}
+			}
+			System.out.println();
+		}
+	}
 }
