@@ -1,4 +1,4 @@
-# JAVA OOPS (ENCAPSULATION AND INHERITANCE)
+# JAVA OOPS (ENCAPSULATION AND INHERITANCE) INTRODUCTION
 
 ## 1. WHY ?  
 - the way of writing code in structured mannar.
@@ -82,9 +82,29 @@ public class EncapsulationExample {
 - we use the `extends`keyword to extend a parent class.
 example: 
 ```java
-class ChildClass extends ParentClass {
+// Parent class
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
 
-} 
+// Child class inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// Main class
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // Inherited method from Animal
+        d.bark(); // Dog's own method
+    }
+}
+ 
 ```
 
 ### key thought with inheritance:
@@ -127,7 +147,7 @@ the `Object` class has a total of 11 methods and only one no-arguement construct
 
 3. `protected void finalize()` - Called by the garbage collector on an object when garbage collection determines that there are no more references to the object.  
 
-4. `Class<?> getClass()` - Returns the runtime class of this Object.
+4. `Class<?> getClass()` - Returns the runtime class of this Object.(fully qualified name of the class)
 
 5. `int hashCode()` - Returns a hash code value for the object.
 

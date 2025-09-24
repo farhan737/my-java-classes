@@ -4,10 +4,8 @@ final public class ArrayUtils {
 
 	Calc calc = new Calc();
 
-	public static void printForEach(byte[] numberArray, String seperator) {
-		for (byte a : numberArray) {
-			System.out.print(a + seperator);
-		}
+	public static void printForEach(CharSequence[] numberArray, String seperator) {
+		System.out.println(String.join(seperator, numberArray));
 	}
 
 	public static void printForEach(short[] numberArray, String seperator) {
