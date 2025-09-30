@@ -1,9 +1,12 @@
 package farhan.util;
 
+import java.util.Arrays;
+
 public class Calc {
 
 	/**
 	 * this method a boolean value true/false if the give number is an odd number
+	 * 
 	 * @param num
 	 * @return boolean
 	 */
@@ -14,6 +17,7 @@ public class Calc {
 
 	/**
 	 * this method a boolean value true/false if the give number is an even number
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -24,6 +28,7 @@ public class Calc {
 
 	/**
 	 * return a boolean value for a number that is a prime number or not
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -36,12 +41,13 @@ public class Calc {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 
 	/**
 	 * returns the last prime number in the given range, returns 0 as default
+	 * 
 	 * @param start
 	 * @param end
 	 * @return
@@ -57,6 +63,7 @@ public class Calc {
 
 	/**
 	 * returns an integer for the number of digits in the given number
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -71,6 +78,7 @@ public class Calc {
 
 	/**
 	 * returns the sum of odd digits in the given number
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -83,9 +91,10 @@ public class Calc {
 		}
 		return sumOfOdd;
 	}
-	
+
 	/**
 	 * returns the sum of even digits in the given number
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -101,6 +110,7 @@ public class Calc {
 
 	/**
 	 * returns the integer value for the count of even digits in the given number
+	 * 
 	 * @param num
 	 * @return
 	 */
@@ -396,19 +406,20 @@ public class Calc {
 		}
 	}
 
-	
 	/**
-	 * this method tries to return a subarray of length 3 the sum of which will be the numbers passed in the first arguement
-	 * @param num		the target number for which the sum of subarray
-	 * @param numbers	the target array
-	 * @return subArray	the final sub array.
+	 * this method tries to return a subarray of length 3 the sum of which will be
+	 * the numbers passed in the first arguement
+	 * 
+	 * @param num     the target number for which the sum of subarray
+	 * @param numbers the target array
+	 * @return subArray the final sub array.
 	 */
 	public static int[] subArraySum(int num, int[] numbers) {
-		int[] subArray = new int[3]; 
+		int[] subArray = new int[3];
 		for (int i = 0; i < numbers.length; i++) {
 			for (int j = 0; j < numbers.length; j++) {
 				for (int k = 0; k < numbers.length; k++) {
-					if(numbers[i] + numbers[j] + numbers[k] == num) {
+					if (numbers[i] + numbers[j] + numbers[k] == num) {
 						subArray[0] = numbers[i];
 						subArray[1] = numbers[j];
 						subArray[2] = numbers[k];
@@ -417,5 +428,19 @@ public class Calc {
 			}
 		}
 		return subArray;
+	}
+
+	/**
+	 * checks if the given Strings are anagrams or not.
+	 * @param str1
+	 * @param str2
+	 * @return <b>true</b> if the given Strings are anagrams
+	 */
+	public static boolean isAnagram(String str1, String str2) {
+		char[] letters1 = str1.toCharArray();
+		Arrays.sort(letters1);
+		char[] letters2 = str2.toCharArray();
+		Arrays.sort(letters2);
+		return Arrays.equals(letters1, letters2);
 	}
 }
