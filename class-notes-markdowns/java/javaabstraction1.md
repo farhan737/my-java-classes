@@ -42,7 +42,6 @@ public class Main implements Greeting {
 
 **Explanation:**  
 - The `Greeting` interface has **one abstract method**, making it a functional interface.  
-- Instead of a lambda, we implement it using an **anonymous inner class**.  
 - This is the traditional way to implement functional interfaces before Java 8 introduced lambdas.  
 
 **Some Predefined Functional Interfaces**:
@@ -88,3 +87,75 @@ public class Main {
 }
 ```
 **Some Predefined Marker Interfaces:** `Cloneable`, `Serializabe` and `RandomAccess`.
+
+## WHAT IS IOC (Inversion Of Control):
+* **IoC** is a design principle where the **control of object creation and dependency management is inverted** from the programmer to a framework or external entity.
+* In other words, instead of classes **creating their own dependencies**, they **get them from outside** (through constructor, setter, or interface).
+* This makes the code more flexible, testable, and loosely coupled.
+* In Java, frameworks like **Spring** use IoC extensively (via Dependency Injection).
+
+---
+
+### Simple Example using Interfaces (without Spring)
+
+```java
+// Service interface
+interface MessageService {
+    void sendMessage(String message);
+}
+
+// Implementation 1
+class EmailService implements MessageService {
+    public void sendMessage(String message) {
+        System.out.println("Email sent: " + message);
+    }
+}
+
+// Implementation 2
+class SMSService implements MessageService {
+    public void sendMessage(String message) {
+        System.out.println("SMS sent: " + message);
+    }
+}
+
+// Class that depends on the interface, not the implementation
+class Notification {
+    private MessageService service;
+
+    // Dependency is injected via constructor
+    public Notification(MessageService service) {
+        this.service = service;
+    }
+
+    public void notifyUser(String message) {
+        service.sendMessage(message);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Instead of Notification creating EmailService or SMSService,
+        // we inject it from outside (IoC in action)
+
+        MessageService email = new EmailService();
+        Notification notification1 = new Notification(email);
+        notification1.notifyUser("Hello Farhan via Email!");
+
+        MessageService sms = new SMSService();
+        Notification notification2 = new Notification(sms);
+        notification2.notifyUser("Hello Farhan via SMS!");
+    }
+}
+```
+
+---
+
+### Explanation:
+
+* `MessageService` is an **interface** (contract).
+* `EmailService` and `SMSService` are **implementations**.
+* `Notification` class depends on `MessageService` (interface), not on a specific implementation → this is **loose coupling**.
+* The actual object (`EmailService` or `SMSService`) is injected from **outside**, not created inside `Notification`.
+* This is the essence of **IoC**.
+
