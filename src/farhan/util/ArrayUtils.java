@@ -1,5 +1,8 @@
 package farhan.util;
 
+import java.util.HashSet;
+import java.util.Set;
+
 final public class ArrayUtils {
 
 	Calc calc = new Calc();
@@ -131,4 +134,96 @@ final public class ArrayUtils {
 		return unordered;
 	}
 
+//	public static String reverseWithSpaces(String line) {
+//
+//		// creating an empty string for reversing the original string with no spaces
+//		String noSpaces = "";
+//		for (int i = 0; i < line.length(); i++) {
+//			if (line.charAt(i) == ' ')
+//				continue;
+//			noSpaces = line.charAt(i) + noSpaces;
+//		}
+//
+//		// finally adding the original spaces
+//		String reverse = "";
+//		int iterate = 0;
+//		for (int i = 0; i < line.length(); i++) {
+//			if (line.charAt(i) == ' ') {
+//				reverse += " ";
+//			} else {
+//				reverse += noSpaces.charAt(iterate);
+//				iterate++;
+//			}
+//		}
+//		return reverse;
+//	}
+
+	public static String reverseWithSpaces(String line) {
+		int left = 0;
+		int right = line.length() - 1;
+		char[] lineChars = line.toCharArray();
+		while (left < right) {
+			if (lineChars[left] == ' ') {
+				left++;
+			} else if (lineChars[right] == ' ') {
+				right--;
+			} else {
+				char temp = lineChars[left];
+				lineChars[left] = lineChars[right];
+				lineChars[right] = temp;
+				left++;
+				right--;
+			}
+		}
+		return String.copyValueOf(lineChars);
+	}
+
+	public static String findMaxLengthString(String line) {
+		line = line.toLowerCase();
+		if (line == null || line.isEmpty())
+			return "";
+
+		String[] words = line.split(" ");
+		String longest = "";
+
+		for (String word : words) {
+			if (word.length() > longest.length()
+					|| (word.length() == longest.length() && word.compareTo(longest) < 0)) {
+				longest = word;
+			}
+		}
+
+		return removeDuplicateChars(longest);
+	}
+
+	private static String removeDuplicateChars(String str) {
+		StringBuilder sb = new StringBuilder();
+		Set<Character> seen = new HashSet<>();
+
+		for (char c : str.toCharArray()) {
+			if (seen.add(c)) { // add() returns false if already present
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+
+	public static String reverseString(String word) {
+		char[] characters = word.toCharArray();
+		char temp = ' ';
+		for (int i = 0; i < word.length() / 2; i++) {
+			temp = characters[i];
+			characters[i] = characters[word.length() - 1 - i];
+			characters[word.length() - 1 - i] = temp;
+		}
+		return String.valueOf(characters);
+	}
+
+	public static String reverseInWords(String line) {
+		String[] words = line.split(" ");
+		for (int i = 0; i < words.length; i++) {
+			words[i] = reverseString(words[i]);
+		}
+		return String.join(" ", words);
+	}
 }
