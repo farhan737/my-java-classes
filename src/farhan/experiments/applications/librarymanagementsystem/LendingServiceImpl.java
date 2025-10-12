@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import farhan.util.DatabaseUtil;
+import farhan.experiments.applications.librarymanagementsystem.service.LendingService;
+import farhan.experiments.applications.librarymanagementsystem.util.DatabaseUtil;
 
 public class LendingServiceImpl implements LendingService {
 

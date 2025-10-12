@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import farhan.util.DatabaseUtil;
+import farhan.experiments.applications.librarymanagementsystem.model.Student;
+import farhan.experiments.applications.librarymanagementsystem.service.StudentService;
+import farhan.experiments.applications.librarymanagementsystem.util.DatabaseUtil;
 
 public class StudentServiceImpl implements StudentService {
 

@@ -1,4 +1,6 @@
-package farhan.experiments.applications.librarymanagementsystem;
+package farhan.experiments.applications.librarymanagementsystem.service;
+
+import farhan.experiments.applications.librarymanagementsystem.model.Book;
 
 public interface BookService {
 	void addBook(Book book);

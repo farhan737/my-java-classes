@@ -1,4 +1,4 @@
-package farhan.experiments.applications.librarymanagementsystem;
+package farhan.experiments.applications.librarymanagementsystem.service;
 
 public interface LendingService {
 	void lendBook(int studentId, int bookId);

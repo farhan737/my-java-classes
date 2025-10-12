@@ -1,4 +1,4 @@
-package farhan.util;
+package farhan.experiments.applications.librarymanagementsystem.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

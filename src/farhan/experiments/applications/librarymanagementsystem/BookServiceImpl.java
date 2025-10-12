@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import farhan.util.DatabaseUtil;
+import farhan.experiments.applications.librarymanagementsystem.model.Book;
+import farhan.experiments.applications.librarymanagementsystem.service.BookService;
+import farhan.experiments.applications.librarymanagementsystem.util.DatabaseUtil;
 
 public class BookServiceImpl implements BookService {
 

@@ -2,6 +2,12 @@ package farhan.experiments.applications.librarymanagementsystem;
 
 import java.util.Scanner;
 
+import farhan.experiments.applications.librarymanagementsystem.model.Book;
+import farhan.experiments.applications.librarymanagementsystem.model.Student;
+import farhan.experiments.applications.librarymanagementsystem.service.BookService;
+import farhan.experiments.applications.librarymanagementsystem.service.LendingService;
+import farhan.experiments.applications.librarymanagementsystem.service.StudentService;
+
 public class MainMenu {
 
 	public static void main(String[] args) {

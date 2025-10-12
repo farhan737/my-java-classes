@@ -1,4 +1,4 @@
-package farhan.experiments.applications.librarymanagementsystem;
+package farhan.experiments.applications.librarymanagementsystem.model;
 
 public class Student {
 	private long studentId;
