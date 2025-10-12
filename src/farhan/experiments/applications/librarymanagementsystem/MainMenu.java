@@ -7,6 +7,9 @@ import farhan.experiments.applications.librarymanagementsystem.model.Student;
 import farhan.experiments.applications.librarymanagementsystem.service.BookService;
 import farhan.experiments.applications.librarymanagementsystem.service.LendingService;
 import farhan.experiments.applications.librarymanagementsystem.service.StudentService;
+import farhan.experiments.applications.librarymanagementsystem.serviceimpl.BookServiceImpl;
+import farhan.experiments.applications.librarymanagementsystem.serviceimpl.LendingServiceImpl;
+import farhan.experiments.applications.librarymanagementsystem.serviceimpl.StudentServiceImpl;
 
 public class MainMenu {
 

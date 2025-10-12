@@ -1,4 +1,4 @@
-package farhan.experiments.applications.librarymanagementsystem;
+package farhan.experiments.applications.librarymanagementsystem.serviceimpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
