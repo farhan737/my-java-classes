@@ -17,10 +17,11 @@ public class DataBaseConnection {
 
 		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/maindata", "root",
 				"farhan93933");
-		String query = "SELECT * FROM emp where ename = ?";
+//		String query = "SELECT * FROM emp where ename = ?";
+		String query = "SELECT * FROM emp";
 		PreparedStatement statement = connection.prepareStatement(query);
-		statement.setString(1, "CLARK");
-		ResultSet resultSet = statement.executeQuery();
+//		statement.setString(1, "CLARK");
+		ResultSet resultSet = statement.executeQuery();	
 		while (resultSet.next()) {
 			System.out.println(
 					resultSet.getInt("empno") + "\t" + resultSet.getString("ename") + "\t" + resultSet.getInt("sal"));
