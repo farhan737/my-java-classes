@@ -84,7 +84,6 @@ final public class ArrayUtils {
 	}
 
 	public static void printRepeated(int[] numbers) {
-		int count = 0;
 		for (int i = 0; i < numbers.length - 1; i++) {
 			for (int j = i + 1; j < numbers.length; j++) {
 				if (numbers[i] == numbers[j]) {
@@ -196,7 +195,7 @@ final public class ArrayUtils {
 		return removeDuplicateChars(longest);
 	}
 
-	private static String removeDuplicateChars(String str) {
+	public static String removeDuplicateChars(String str) {
 		StringBuilder sb = new StringBuilder();
 		Set<Character> seen = new HashSet<>();
 
@@ -225,5 +224,24 @@ final public class ArrayUtils {
 			words[i] = reverseString(words[i]);
 		}
 		return String.join(" ", words);
+	}
+
+	public static HashSet<String> allPossiblePermutations(String str) {
+		HashSet<String> result = new HashSet<>();
+		permute("", str, result);
+		return result;
+	}
+
+	private static void permute(String prefix, String remaining, HashSet<String> result) {
+		if (remaining.isEmpty()) {
+			result.add(prefix);
+		} else {
+			for (int i = 0; i < remaining.length(); i++) {
+				char c = remaining.charAt(i);
+				String before = remaining.substring(0, i);
+				String after = remaining.substring(i + 1);
+				permute(prefix + c, before + after, result);
+			}
+		}
 	}
 }
