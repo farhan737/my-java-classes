@@ -9,7 +9,7 @@ public final class DatabaseUtil {
 	final private static String USERNAME = "root";
 	final private static String PASSWORD = "farhan93933";
 	private static Connection conn = null;
-	
+
 	// load the mysql-connector-j jar package
 	static {
 		try {
@@ -24,7 +24,7 @@ public final class DatabaseUtil {
 			if (conn == null || conn.isClosed()) {
 				conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			} else {
-				System.err.println("connection busy, close the connection");
+				System.err.println("connection busy or not started, close the connection");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -36,17 +36,25 @@ public final class DatabaseUtil {
 		try {
 			if (conn != null && !conn.isClosed()) {
 				conn.createStatement().execute("USE " + databaseName);
-			}
+			} else
+				System.err.println("connection not found");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	final public static void closeConnection() {
+	final public static boolean closeConnection() {
 		try {
-			conn.close();
+			if (conn == null)
+				System.err.println("no connections found to close");
+			else {
+				conn.close();
+				System.out.println("connection closed successfully");
+				return true;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 }
