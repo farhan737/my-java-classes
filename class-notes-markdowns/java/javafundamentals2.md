@@ -180,3 +180,6 @@ examples:
 - *warning:* Lossy type casting occurs when a value is converted to a smaller data type that cannot fully represent it, causing data loss.  
 example representation diagram:
 ![lossy typecasting](<assets/Lossy conversion.svg>)
+
+[previous](javafundamentals1.md)
+[next](javafundamentals3.md)

@@ -149,3 +149,5 @@ String result = (age >= 18) ? "Adult" : "Minor";
 System.out.println(result);  // Adult
 ```
 
+[previous](javafundamentals6.md)
+[next](javalogicalstatements1.md)

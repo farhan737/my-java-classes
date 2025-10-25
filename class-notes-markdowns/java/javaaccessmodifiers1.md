@@ -102,3 +102,6 @@ class DefaulExample {
   }
   ```
   this is not legal in java, will result in complile-time error.
+
+  [previous](javalogicalstatements1.md)
+  [next](javacodingstandards1.md)

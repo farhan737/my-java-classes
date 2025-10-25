@@ -159,3 +159,5 @@ public class Main {
 * The actual object (`EmailService` or `SMSService`) is injected from **outside**, not created inside `Notification`.
 * This is the essence of **IoC**.
 
+[previous](javashallowcopyvsdeepcopy.md)
+[next](javaabstraction2.md)

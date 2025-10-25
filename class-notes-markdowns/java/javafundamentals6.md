@@ -236,3 +236,6 @@ Argument 3: 42
 - `System`: A final class in the java.lang package, providing access to system-related functionalities.
 - `out`: A public static instance of `PrintStream` in the System class, representing the standard output stream.
 - `println()`: A method of `PrintStream` that prints the argument passed to it and then moves the cursor to a new line.
+
+[previous](javafundamentals5.md)
+[next](javaoperators1.md)

@@ -160,3 +160,6 @@ Integer num = null;
     <td>For objects only</td>
   </tr>
 </table>
+
+[previous](javafundamentals3.md)
+[next](javafundamentals5.md)

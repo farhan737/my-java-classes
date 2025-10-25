@@ -357,3 +357,5 @@ class level objects can be created using `static` and these object reside in the
 19. explain the terms source code vs byte code vs native code ?
 20. explain the difference between **JRE** vs **JDK** vs **JVM** ?
 
+[next](javafundamentals1.md)
+[previous](javaintroduction1.md)

@@ -241,4 +241,5 @@ public void showMessage() {
 
 ---
 
-Would you like me to also include **labeled break/continue** (special cases for nested loops), or keep it strictly to the basics?
+[previous](javaoperators1.md)
+[next](javaaccessmodifiers1.md)

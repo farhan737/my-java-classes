@@ -82,3 +82,6 @@ In this example:
 * `Shape` is **abstract** because we don’t want to create a generic "Shape" object.
 * Subclasses (`Circle`, `Rectangle`) provide their own **implementation** of the `draw()` method.
 * This demonstrates **abstraction**: we hide the common implementation inside the abstract class, and force subclasses to provide specific behavior.
+
+[previous](javaabstraction1.md)
+[next](javaarrays1.md)

@@ -117,3 +117,6 @@ public class Student {
 - Original and copied objects are independent (changes in one don’t affect the other).
 - Needed when dealing with mutable reference types (like custom objects, lists, maps).
 - Can be done via copy constructor, clone(), or serialization.
+
+[previous](javapolymorphism1.md)
+[next](javaabstraction1.md)

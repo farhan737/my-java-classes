@@ -162,3 +162,6 @@ the `Object` class has a total of 11 methods and only one no-arguement construct
 10. `void wait(long timeout)` - Causes the current thread to wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed.
 
 11. `void wait(long timeout, int nanos)` - Causes the current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object, or some other thread interrupts the current thread, or a certain amount of real time has elapsed.
+
+[previous](javacodingstandards1.md)
+[next](javapolymorphism1.md)

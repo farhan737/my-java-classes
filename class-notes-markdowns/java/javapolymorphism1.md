@@ -374,3 +374,6 @@ The JVM decides **at runtime** which `sound()` method to call based on the **act
        public void show(int a) {}
    }
    ```
+
+[previous](javainheritance1.md)  
+[next](javashallowcopyvsdeepcopy.md)

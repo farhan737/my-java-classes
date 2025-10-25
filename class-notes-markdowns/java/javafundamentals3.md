@@ -125,3 +125,5 @@ public class Datatypes {
   String.valueOf(45);        // int → String
   ```
 
+[previous](javafundamentals2.md)
+[next](javafundamentals4.md)

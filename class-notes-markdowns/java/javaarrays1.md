@@ -222,3 +222,6 @@ public class Main {
 * Useful for **storing primitive types or objects** in bulk.
 * Good for **performance and memory efficiency** but lack flexibility.
 * For dynamic collections, use Java Collections Framework (e.g., `ArrayList`).
+
+[previous](javaabstraction2.md)
+[next](javastringhandling.md)

@@ -139,5 +139,5 @@ public class Main {
 3. a **class** is a blueprint of an **object**, meaning its the plan or design or overview or architecture or template of its **objects.** 
 4. an **object** is also a **instance** of a class
 
-
+go to [next](javaintroduction2.md)
 

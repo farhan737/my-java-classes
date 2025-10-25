@@ -187,3 +187,6 @@ class Parent {
     <td>Cannot be overridden</td>
   </tr>
 </table>
+
+[previous](javafundamentals4.md)
+[next](javafundamentals6.md)

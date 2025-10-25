@@ -140,5 +140,5 @@ public class MathUtils {
     }
 }
 ```
-
-
+[previous](javaaccessmodifiers1.md)
+[next](javainheritance1.md)

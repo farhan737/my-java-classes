@@ -131,3 +131,6 @@ in the above example program there are 15 identifiers they are
     - `continue` skips the current iteration of a loop and jumps to the next one. does not terminate the loop, just skips ahead.
     - `goto` this keyword was just reserved keyword in java and was deliberately disabled by the java designer as it makes code harder to maintain.
     - `const` also a reserved keyword in java, but it is not used. instead of const, java uses `final` to declare constants.
+
+[next](javafundamentals2.md)
+[previous](javaintroduction2.md)
