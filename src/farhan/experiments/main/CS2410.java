@@ -44,7 +44,12 @@ class Student {
 class Service {
 	static Connection conn = DatabaseUtil.getConnection();
 	static {
-		DatabaseUtil.useDatabase("student");
+		DatabaseUtil.useDatabase("farhandb");
+		try {
+			conn.createStatement().execute("create table if not exists student(rollnumber int, name varchar(50));");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void setStudent(Student student) {

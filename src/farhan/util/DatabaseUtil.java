@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public final class DatabaseUtil {
 	final private static String URL = "jdbc:mysql://localhost:3306/";
 	final private static String USERNAME = "root";
-	final private static String PASSWORD = "farhan93933";
+	final private static String PASSWORD = "3419";
 	private static Connection conn = null;
 
 	// load the mysql-connector-j jar package
