@@ -185,6 +185,7 @@ In short:
 * **Exceptions** → Something went wrong, but your program *can* recover.
 * **Errors** → Something is broken at a deeper level, your program usually *cannot* continue.
 
+[next](javaexceptionhandling2.md)
 [previous](javastringhandling.md)
-[next](javacollectionslists1.md)
+
 
