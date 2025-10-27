@@ -1,6 +1,8 @@
 package farhan.util;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Calc {
 
@@ -432,6 +434,7 @@ public class Calc {
 
 	/**
 	 * checks if the given Strings are anagrams or not.
+	 * 
 	 * @param str1
 	 * @param str2
 	 * @return <b>true</b> if the given Strings are anagrams
@@ -442,5 +445,23 @@ public class Calc {
 		char[] letters2 = str2.toCharArray();
 		Arrays.sort(letters2);
 		return Arrays.equals(letters1, letters2);
+	}
+
+	public static Map<Character, Integer> printCharCount(String str) {
+		char[] letters = str.toCharArray();
+		Map<Character, Integer> count = new HashMap<>();
+		for (char c : letters) {
+			count.put(c, count.get(c) == null ? 1 : count.get(c) + 1);
+		}
+		return count;
+	}
+
+	public static Map<String, Integer> printWordCount(String sentence) {
+		String[] words = sentence.split(" ");
+		Map<String, Integer> count = new HashMap<>();
+		for (String word: words) {
+			count.put(word, count.get(word) == null ? 1 : count.get(word) + 1);
+		}
+		return count;
 	}
 }
