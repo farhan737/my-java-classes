@@ -1,7 +1,11 @@
 package farhan.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 
 public class Calc {
@@ -447,6 +451,33 @@ public class Calc {
 		return Arrays.equals(letters1, letters2);
 	}
 
+	public static Map<String, List<String>> printAnagrams(String[] words) {
+		// Step 1: Remove duplicates
+		List<String> uniqueWords = new ArrayList<>(new LinkedHashSet<>(Arrays.asList(words)));
+
+		// Step 2: Group anagrams using sorted key
+		Map<String, List<String>> grouped = new HashMap<>();
+		for (String word : uniqueWords) {
+			char[] chars = word.toCharArray();
+			Arrays.sort(chars);
+			String key = new String(chars);
+			grouped.computeIfAbsent(key, k -> new ArrayList<>()).add(word);
+		}
+
+		// Step 3: Convert grouped anagrams to map with representative word as key
+		Map<String, List<String>> anagrams = new LinkedHashMap<>();
+		for (List<String> group : grouped.values()) {
+			if (!group.isEmpty()) {
+				String key = group.get(0); // first word in group
+				anagrams.put(key, group);
+			}
+		}
+
+		// Step 4: Print output
+		System.out.println("Unique words : " + uniqueWords);
+		return anagrams;
+	}
+
 	public static Map<Character, Integer> printCharCount(String str) {
 		char[] letters = str.toCharArray();
 		Map<Character, Integer> count = new HashMap<>();
@@ -459,7 +490,7 @@ public class Calc {
 	public static Map<String, Integer> printWordCount(String sentence) {
 		String[] words = sentence.split(" ");
 		Map<String, Integer> count = new HashMap<>();
-		for (String word: words) {
+		for (String word : words) {
 			count.put(word, count.get(word) == null ? 1 : count.get(word) + 1);
 		}
 		return count;
